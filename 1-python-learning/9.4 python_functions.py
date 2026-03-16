@@ -191,7 +191,7 @@ def notify_user(text,**kwargs):
     if not method:
         print("no communication method has been chosen")
 
-notify_user("Hello",urgent=True,in_app=False,email=True,sms=False,hehe="booooooooo")
+notify_user("Hello",urgent=True,in_app=False,email=True,sms=False)
 
 
 '''
@@ -226,7 +226,7 @@ def handle_order(order_id,status="processing",**kwargs):
     if not delivery:
         print("no notification sent")
 
-handle_order(333,status="jju",urgent=True,sms=False)
+handle_order(333,status="yes",urgent=True,sms=False)
     
 '''
 Write a function track_expenses that:
@@ -297,7 +297,7 @@ def smart_notify(message,**kwargs):
     if not delivery:
         print("no delivery method chosen")
 
-smart_notify("it's okay girlie",priority="high", email=True, sms=True,push=True )
+smart_notify("it's okay",priority="high", email=True, sms=True,push=True )
 
     
 '''
@@ -331,7 +331,7 @@ def create_profile(name,country="Unknown",**kwargs):
         print("Incomplete travel documents") 
 
 # create_profile("rishka","malaysia",Passport=True,Vaccination=False)
-# python .\python_functions.py  
+
 
 '''
 Question 1: Attendance Logic
@@ -493,7 +493,7 @@ def music(*args,**kwargs):
     if songs==0:
         print("playlist empty")
 
-# music("cance queen","slaytastic",shuffle=True,repeat=True)
+# music("queen","slaytastic",shuffle=True,repeat=True)
 
 '''
 Question 6: Message Styling
@@ -514,7 +514,7 @@ Suffix is applied last (if present)
 Print the final formatted message
 '''
 
-def punct(message,**kwargs):
+def punctuation(message,**kwargs):
     prefix=kwargs.get("prefix")
     if prefix:
         message=prefix + message
@@ -527,7 +527,7 @@ def punct(message,**kwargs):
     print(f"final message is {message}")
 
 
-# punct("happy",prefix="Un",uppercase=True,suffix=False)
+# punctuation("happy",prefix="Un",uppercase=True,suffix=False)
 
 '''
 Question 7: Order Data Builder

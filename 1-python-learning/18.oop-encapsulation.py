@@ -27,6 +27,4 @@ class BankAccount:
         
 rishkas_acct=BankAccount(1000,'riri')
 # print(rishkas_acct.balance)
-print(rishkas_acct.)
-
 # print(rishkas_acct.show_balance())
