@@ -1,0 +1,164 @@
+# add 10 each score and print back 
+scores2 = [45,78,49,23,67,23,75,23,89,65,53,78,49,23,67,23,75,23,89,65,5,78,49,23,67,23,75,23,89,65,5]
+scores= [10,20,30]
+
+for i in scores2:  # i is treated as a value, not as a index, so print(i), no need keep print(scores2[i])
+    print(i+10)
+#vs
+# print(scores2[1+10]) #> individuallyadd
+
+    
+#print every odd name in the below list
+# names  
+#print every odd name in the below list using a for loop
+#Hint: use a range object. Call each name using its index
+
+names = ['Roy','Sharon','Therese','Ravi','Shanti','Nelum','Hillary','Niran']
+#below is wrong way to do cz i is then treated as a string as what's in names r strings and u want to pick up numbers from a range(int).
+#there's a mismatch, it'll print everything:
+# for i in names:
+#     if i in range(0,len(names),2): 
+#         print(names[i])
+#     else:
+#         print(names)
+
+
+ 
+#correct way: i is an integer here, so it matches range(integers), prints what actually want!
+for i in range(0, len(names), 2):  
+    print(names[i]) #need keep print(names[i]), as i here is not a value, its an index needs to fetch value from the list
+    # at that index (given by range, which also represents indexes)
+
+
+# Exercices
+
+# print every even name in the below list, print every odd name in the below list using a for loop
+# Hint: use a range object. Call each name using its index
+# names = ['Roy','Sharon','Therese', 'Ravi','Shanti','Nelum','Hillary','Niran']
+
+for e in range(1,len(names),2):
+    print(names[e])
+
+'''
+You are given a list of numbers. 
+Write a program that will: 
+
+1. Go through the list using a FOR LOOP.
+2. Use an IF condition to separate the numbers:
+   - Even numbers go into the "even_list"
+   - Odd numbers go into the "odd_list"
+3. Finally, print both lists.
+
+'''
+#wrong:
+# even_list = []
+# odd_list=[]
+# numbers=[1,2,3,4,5,6,7,8,9]
+# for i in range(1,len(numbers),2):
+#     even_list.append(numbers[i]) #dontforgettospecifythei, in [i]
+# else:(#this is wrong as can only use else+if, not else+for w no if)
+#     odd_list.append(numbers[i])
+# print(even_list)
+# print(odd_list) 
+
+#correct:
+# even_list = []
+# odd_list=[]
+# numbers=[1,2,3,4,5,6,7,8,9]
+# for i in range(0,len(numbers),2):  #here can use index as comes from range(...), so it’s a number (an index). asking for value at that position
+#     odd_list.append(numbers[i]) #need to keep [i] in here as then they know which index to add
+# for i in range(1,len(numbers),2):
+#     even_list.append(numbers[i])
+
+# print(odd_list)
+# print(even_list)
+
+
+'''
+create a for loop that will seperate below numbers based on whether they are higher than 50 or not
+into two lists called "pass_list" and "fail_list"
+Hint: use an IF condition inside the FOR LOOP
+'''
+
+# pass_list = []
+# fail_list = []
+
+# how_many = int(input("pls enter number of values")) ##allows python to allocate a slot for the range
+# for i in range(how_many): #need keep i here
+#     user = int(input("pls enter your number")) #keeping this allows the values/no. added to be kept in slot
+#     if user>50:
+#      pass_list.append(user)#MAKESUREINDENT, #no need to keep [i] here as it is already considered a value as typed in by user
+#     else:
+#         fail_list.append(user)
+
+# print(pass_list)
+# print(fail_list)
+
+
+
+
+
+'''
+1. Ask the user to enter 5 test scores (one by one).
+2. Store these scores in a list.
+3. Use a FOR LOOP and IF condition:
+   - If the score is 50 or more, put it in the "pass_list".
+   - Otherwise, put it in the "fail_list".
+4. Print both lists at the end.
+
+'''
+
+# fail_list =[]
+# pass_list =[]
+
+# number_range = int(input("Please enter number of values"))
+# for i in range(number_range):
+#     test_score = int(input("Please enter number of test scores"))
+#     if test_score >=50:
+#         pass_list.append(test_score)
+#     else:
+#         fail_list.append(test_score)
+# print(fail_list)
+# print(pass_list)
+
+    
+
+
+
+'''
+Ask the user how many numbers they want to enter.  
+2. Take that many numbers as input from the user, one by one.  
+3. Store the numbers in a list.  
+4. Use a FOR LOOP and IF conditions to create three lists:
+   - positive_numbers
+   - negative_numbers
+   - zeros
+5. Print all three lists at the end.'''
+
+positive_numbers = []
+negative_numbers = []
+zero = []
+user_range = int(input("How many numbers you need to enter:"))
+for i in range(user_range):
+    values = int(input("enter positive/negative/zero values :"))
+    if values >0: 
+        positive_numbers.append(values)
+    elif values <0:
+        negative_numbers.append(values)
+    else:
+            zero.append(values)
+
+print(positive_numbers)
+print(negative_numbers)
+print(zero)
+
+
+    
+
+
+
+
+
+
+
+
