@@ -318,5 +318,86 @@
 # atm1.update()
 # atm1.ending()
       
+'''
+2. Grocery Store Shopping Cart
+   A grocery store wants to simulate a shopping cart system.
 
-      
+* Create a ShoppingCart class with attributes items (a dictionary of item_name: price) and total_cost.
+* Create a method to add items by repeatedly asking the user for item names and prices until the user enters "done".
+* Use a while loop for repeated input.
+* Use a dictionary to store items and prices.
+* Create a method to calculate the total cost using a for loop over the dictionary values.
+* Use an if condition to reject negative prices.
+'''
+# class shoppingcart:
+#    def __init__(self):
+#       self.products={}
+   
+#    def items(self):
+#       while True:
+#          name=input("pls enter item name:")
+#          if name=="done":
+#             break
+#          price=int(input("pls enter item price")) 
+#          self.products[name]=price
+   
+#    def calculate(self):
+#       total=0
+#       for name,price in self.products.items():
+#          if price<0:
+#             print("no negative prices")
+#          else:
+#             total+=price
+#       print(total)
+
+# shopping1=shoppingcart()
+# shopping1.items()
+# shopping1.calculate()
+'''
+3. Fitness Tracker Daily Steps
+   A fitness app wants to track a user's daily steps over a week.
+
+* Create a FitnessTracker class with attributes username and daily_steps (a list).
+* Create a method to record steps that asks the user to enter steps for each day of the week using a for loop.
+* Use if conditions to reject negative step counts.
+* Create a method to calculate the average steps per day.
+* Create a method that checks if the user met a daily goal of 8000 steps on each day and prints the days they failed to meet the goal.
+'''
+
+class fitnesstracker:
+   def __init__(self,username):
+      self.username=username
+      self.daily_steps=[]
+   
+   def steps(self):
+      self.days=["mon","tues","wed","thurs","fri","sat","sun"]
+      for day in self.days:
+         while True:
+            steps=int(input("pls enter no.steps")) 
+            if steps<0:
+               print("no negative numbers")
+            else:
+               self.daily_steps.append(steps)
+               break 
+   def overall(self):
+      ovarll=sum(self.daily_steps)/len(self.daily_steps)
+      print(f"{self.username} had average of {ovarll} steps") 
+   
+   def goals(self):
+      for i in range(len(self.days)):
+         if self.daily_steps[i]<8000:
+            print(f"on {self.days[i]}, you only ran {self.daily_steps[i]}")
+
+# f1=fitnesstracker("rishkyyyy")
+# f1.steps()
+# f1.overall()
+# f1.goals()
+
+
+ 
+
+
+
+
+
+

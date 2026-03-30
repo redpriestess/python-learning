@@ -443,5 +443,210 @@ class Gradeanalyser():
                 print(f"for subject {subject}, the students grades were {grades}")
 
             
-grade1=Gradeanalyser()
-grade1.review()
+# grade1=Gradeanalyser()
+# grade1.review()
+
+
+
+'''
+You are a programmer building a simple payroll management tool for a small company. Your task is to create various functions to automate payroll calculations. 
+This problem will test your understanding of Python functions, parameters, default arguments, return statements, and handling multiple arguments.
+
+1. Write a simple function called welcome_employee that takes no parameters and prints "Welcome to our company!".
+2. Create a function called employee_greeting that takes one parameter called employee_name with a default value of 'Employee'.
+ It should print a greeting message like "Hello Employee!".
+
+3. Define a function named calculate_hourly_wage that accepts two parameters: hours_worked and hourly_rate. 
+The function should calculate the total wage (hours multiplied by rate) and print the result.
+
+4. Now modify the calculate_hourly_wage function to return the calculated wage instead of printing it.
+
+5. Implement a function total_monthly_payroll that accepts a list of employee wages and returns the total payroll amount using the previously defined wage 
+calculation function. Do not use any built-in Python functions except print().
+
+6. Write a function named calculate_bonus with parameters salary and an optional parameter bonus_percentage defaulting to 5%.
+ The function should return the bonus amount calculated on the salary.
+
+7. Create a function total_expenses that can accept any number of expense amounts (variable number of arguments) and returns their sum.
+
+8. Define a function employee_details that takes two keyword arguments, name and department, and prints the details in the format 
+"Employee [name] works in the [department] department."
+
+9. Lastly, create a flexible function employee_record that accepts any number of keyword arguments and prints the employee's full information as a dictionary.
+
+Demonstrate each of these functions with appropriate calls.
+'''
+def welcome_employee():
+    print("welcome to our company")
+
+def employee_greeting(employee_name="employee"):
+    print(f"hello {employee_name}")
+
+def calculate_hourly_wage(hours_worked,hourly_rate):
+    total_wage=hours_worked*hourly_rate 
+    return total_wage  
+
+total= [calculate_hourly_wage(34,98),
+        calculate_hourly_wage(89,98)] 
+
+# data= [(34,90),(77,90)] 
+# for hours,rate in data:
+#     print(calculate_hourly_rage(hours,rate))
+
+def total_payroll(employee_wages): 
+    count=0
+    for number in employee_wages:
+        count+=number 
+    print(f"total monthly payroll is {count}") 
+
+total_payroll(total) 
+
+def calculate_bonus(salary,bonus_percentage=5):
+        discount=(bonus_percentage/100)*salary
+        return discount 
+
+calculate_bonus(56,9)
+
+def total_expenses(*args):
+    total=sum(args) 
+    return total 
+
+total_expenses(56,44,556,33,44,55)
+
+def employee_details(**kwargs):
+    for key,name in kwargs.items():
+        print(f"{key}:{name}")
+
+
+employee_details(name="rishka",age=22,employed=2026,salary=6000)
+
+
+def deets(**kwargs):
+    print(kwargs)
+
+deets(name="rishka",age=22,employed=2026,salary=6000) 
+
+
+
+
+'''
+
+----------------------------------------------------------------------------------------------
+
+You are developing a program for a cinema theater that allows users to reserve movie tickets.
+ This task tests your understanding of functions, conditional statements, loops, lists, and getting user input in Python.
+
+1. Movie selection
+   Create a function called select_movie that performs the following tasks:
+
+* Stores a list of available movies: 'Oppenheimer', 'Barbie', 'Mission Impossible', and 'Spider-Man'.
+* Displays the movies with numbers to the user and asks them to select a movie by entering a number.
+* Uses an if condition to validate the user's choice. If the choice is invalid, inform the user and ask again until a valid movie is selected.
+* Return the selected movie name.
+
+2. Seat selection
+   Define another function called choose_seats that:
+
+* Accepts the selected movie name as an input parameter.
+* Creates a list of available seat numbers from 1 to 10.
+* Continuously prompts the user to choose seat numbers, each time verifying with an if condition if the seat is available.
+* Once a seat is selected, remove that seat number from the available seats list.
+* Use another if condition to stop taking seat reservations when the user has booked 3 seats or when the user types 'done'.
+* Return the list of booked seats.
+
+3. Booking summary
+   Define a third function called booking_summary that:
+
+* Accepts two parameters: the selected movie name and the list of booked seats.
+* Uses a for loop to neatly display each booked seat number.
+* Prints a summary statement showing the movie chosen and all reserved seats.
+
+Finally, call these three functions sequentially in your main program to run the cinema ticket reservation system.
+
+'''
+def select_movie():
+    movies=["barbie","oppenheimer","mission imp","spiderman"]
+    for i in range(len(movies)):
+        print(f"{i+1}:{movies[i]}") 
+    user=input("pls enter a number:")
+    num=int(user)
+    if 1<=num<=len(movies): 
+        print(f"you have selected {movies[num-1]}")
+    return movies[num-1]
+def seats(place):
+    seats=[1,2,3,4,5,6,7,8,9,10]
+    total=[]
+    while True:
+        user=input("pls pick a seat number")
+        if user=="done":
+            break
+        inted=int(user)
+        if inted in seats:
+            total.append(inted)
+            seats.remove(inted)
+        print(f"Total number of seats is {total}")
+    return total
+def booking_summary(name,seats):
+    for seat in seats: 
+        print(f"movie {name} has seats: {seat} selected")
+   
+# movie=select_movie()
+# seat=seats(movie)
+# booking_summary(movie,seat) 
+
+'''
+---------------------------------------------------------------
+
+You're building a simple warehouse inventory system for a small business. 
+The system should allow the user to add items, remove items, and view current stock. 
+This problem requires you to break the logic into interconnected functions, where one utility function is reused multiple times across the program.
+ You'll practice functions, lists, conditionals, loops, and user input.
+
+1. Core utility function: find_item
+   Create a function find_item(item_name, inventory) that:
+
+* Accepts an item_name (string) and an inventory (list of dictionaries).
+* Searches for the item in the inventory list. Each item in the list is a dictionary with 'name' and 'quantity'.
+* If found, returns the dictionary object.
+* If not found, returns None.
+
+2. Add or update inventory: add_item
+   Define a function add_item(inventory) that:
+
+* Prompts the user to enter the name and quantity of an item to add.
+* Calls find_item to check if the item already exists:
+
+  * If it does, increase its quantity.
+  * If not, add it as a new dictionary to the inventory list.
+* Repeat the process until the user types 'done'.
+'''
+inventory_list=[{"name":"rishka","stock":3},{"name":"car","stock":5}]
+
+def find_item(name,inventory):
+    for things in inventory:
+        if things["name"]==name:
+            return things #i returned name
+        else:
+            return None
+
+
+def add_item():
+    while True: 
+        user=input("pls enter item:")
+        if user=="done":
+            break 
+        amount=int(input("pls enter how much stock is present:")) 
+        existing_item=find_item(user,inventory_list)
+
+        if existing_item:
+            existing_item["stock"]+=amount 
+            print(f"updated amount, {existing_item}") #didntkeepearlier
+
+        else:
+            updated_item={"name":user,"stock":amount} 
+            inventory_list.append(updated_item) 
+            print(f"updated new item:{updated_item}")
+
+add_item() 
+
+
